@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aradhana Singh — Data Analyst</title>
+<meta name="description" content="Data Analyst portfolio of Aradhana Singh — SQL, Python, and Power BI projects in HR attrition and customer segmentation analytics.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="nav">
+  <a href="#top" class="nav__name">Aradhana Singh</a>
+  <nav class="nav__links">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#certifications">Certifications</a>
+    <a href="Aradhana_Singh_Resume.pdf" class="nav__resume">Résumé</a>
+  </nav>
+</header>
+
+<main>
+
+  <section id="top" class="hero">
+    <p class="hero__kicker">Data Analyst</p>
+    <h1 class="hero__headline">I turn messy data into decisions.</h1>
+    <p class="hero__sub">A quantitative research background in bioinformatics, now applied to business analytics — SQL, Python, and Power BI, working end to end from raw data to a recommendation.</p>
+
+    <div class="hero__stats">
+      <div class="stat">
+        <span class="stat__value">16.12%</span>
+        <span class="stat__label">attrition rate uncovered</span>
+      </div>
+      <div class="stat">
+        <span class="stat__value">$6.8M</span>
+        <span class="stat__label">annual cost quantified</span>
+      </div>
+      <div class="stat">
+        <span class="stat__value">4,338</span>
+        <span class="stat__label">customers segmented</span>
+      </div>
+    </div>
+
+    <div class="hero__actions">
+      <a href="Aradhana_Singh_Resume.pdf" class="btn btn--primary">Download résumé</a>
+      <a href="https://github.com/aradhanasingh-da" class="btn btn--ghost">GitHub</a>
+      <a href="https://www.linkedin.com/in/aradhana-singh-4358a0327/" class="btn btn--ghost">LinkedIn</a>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <h2 class="section__title">About</h2>
+    <p class="section__lede">
+      I completed an M.Sc. in Bioinformatics at Banaras Hindu University, where I spent two years working with
+      large-scale biological datasets, statistical models, and computational pipelines on national HPC infrastructure.
+      That work taught me how to sit with messy, high-volume data until it tells you something true — a skill that
+      transfers directly to business analytics.
+    </p>
+    <p class="section__lede">
+      I've applied that same rigor to two self-directed analytics projects covering HR attrition and customer
+      segmentation — writing SQL to clean and aggregate data at scale, using Python to check what the data was
+      really saying, and building Power BI dashboards that turn a finding into something a stakeholder could act on.
+      I'm actively looking for my first Data Analyst role, where I can bring that same combination — research
+      discipline plus business judgment — to real business problems.
+    </p>
+  </section>
+
+  <section id="skills" class="section">
+    <h2 class="section__title">Skills</h2>
+
+    <div class="skillgroup">
+      <h3 class="skillgroup__title">Languages &amp; querying</h3>
+      <div class="pills">
+        <span class="pill">SQL (PostgreSQL)</span>
+        <span class="pill">Python</span>
+        <span class="pill">R</span>
+      </div>
+    </div>
+
+    <div class="skillgroup">
+      <h3 class="skillgroup__title">BI &amp; visualization</h3>
+      <div class="pills">
+        <span class="pill">Power BI</span>
+        <span class="pill">DAX</span>
+        <span class="pill">Tableau</span>
+        <span class="pill">Excel</span>
+      </div>
+    </div>
+
+    <div class="skillgroup">
+      <h3 class="skillgroup__title">Analysis techniques</h3>
+      <div class="pills">
+        <span class="pill">Statistical analysis</span>
+        <span class="pill">RFM segmentation</span>
+        <span class="pill">Attrition &amp; churn modeling</span>
+        <span class="pill">Data cleaning &amp; ETL</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="section">
+    <h2 class="section__title">Projects</h2>
+
+    <article class="project">
+      <div class="project__body">
+        <h3 class="project__title">HR Employee Attrition &amp; Retention Analytics</h3>
+        <p class="project__desc">
+          Analyzed 1,470 employee records in PostgreSQL to find out why people were leaving — and what it was costing
+          the business. Overtime turned out to be the strongest signal in the data: employees working overtime left
+          at nearly three times the rate of everyone else. Built a Power BI dashboard so HR could track the risk
+          by department, tenure, and overtime status without waiting on a new report each time.
+        </p>
+        <div class="project__stats">
+          <div class="stat stat--compact">
+            <span class="stat__value">30.5% <span class="stat__vs">vs 10.4%</span></span>
+            <span class="stat__label">attrition, overtime vs not</span>
+          </div>
+          <div class="stat stat--compact">
+            <span class="stat__value stat__value--accent">$6.8M</span>
+            <span class="stat__label">estimated annual cost</span>
+          </div>
+          <div class="stat stat--compact">
+            <span class="stat__value">5</span>
+            <span class="stat__label">custom DAX measures</span>
+          </div>
+        </div>
+        <div class="pills pills--tech">
+          <span class="pill pill--tech">PostgreSQL</span>
+          <span class="pill pill--tech">Python</span>
+          <span class="pill pill--tech">Power BI</span>
+        </div>
+        <a href="https://github.com/aradhanasingh-da/hr-attrition-analytics" class="project__link">View the code and dashboard</a>
+      </div>
+    </article>
+
+    <article class="project">
+      <div class="project__body">
+        <h3 class="project__title">End-to-End E-Commerce Customer RFM Segmentation</h3>
+        <p class="project__desc">
+          Segmented 4,338 customers across 500K+ transactions using Recency, Frequency, and Monetary analysis in
+          PostgreSQL. A small slice of the customer base — the "Champions" — turned out to drive more than half of
+          all revenue, while over a third of customers had effectively gone quiet. Built an executive Power BI
+          dashboard to make both groups easy to act on: who to retain, and who to win back.
+        </p>
+        <div class="project__stats">
+          <div class="stat stat--compact">
+            <span class="stat__value stat__value--accent">58%</span>
+            <span class="stat__label">of revenue from 18.1% of customers</span>
+          </div>
+          <div class="stat stat--compact">
+            <span class="stat__value">35.9%</span>
+            <span class="stat__label">flagged lost / inactive</span>
+          </div>
+          <div class="stat stat--compact">
+            <span class="stat__value">$8.91M</span>
+            <span class="stat__label">total spend analyzed</span>
+          </div>
+        </div>
+        <div class="pills pills--tech">
+          <span class="pill pill--tech">PostgreSQL</span>
+          <span class="pill pill--tech">Power BI</span>
+        </div>
+        <a href="https://github.com/aradhanasingh-da/ecommerce-rfm-segmentation" class="project__link">View the code and dashboard</a>
+      </div>
+    </article>
+  </section>
+
+  <section id="certifications" class="section">
+    <h2 class="section__title">Certifications &amp; virtual experience</h2>
+    <ul class="certlist">
+      <li><span class="certlist__name">Tata Data Visualization: Empowering Business with Effective Insights</span><span class="certlist__issuer">Forage — Job Simulation</span></li>
+      <li><span class="certlist__name">Deloitte Australia Data Analytics Job Simulation</span><span class="certlist__issuer">Forage</span></li>
+      <li><span class="certlist__name">Complete Data Analytics</span><span class="certlist__issuer">LearnTube by CareerNinja</span></li>
+      <li><span class="certlist__name">SQL</span><span class="certlist__issuer">LearnTube by CareerNinja</span></li>
+      <li><span class="certlist__name">Power BI</span><span class="certlist__issuer">LearnTube by CareerNinja</span></li>
+      <li><span class="certlist__name">Bioinformatics Specialization (7 courses)</span><span class="certlist__issuer">University of San Diego, Coursera</span></li>
+      <li><span class="certlist__name">The Joy of Computing Using Python</span><span class="certlist__issuer">IIT Madras, NPTEL</span></li>
+      <li><span class="certlist__name">Introduction to Machine Learning</span><span class="certlist__issuer">IIT Kharagpur, NPTEL</span></li>
+    </ul>
+  </section>
+
+</main>
+
+<footer class="footer" id="contact">
+  <p class="footer__line">Based in Noida, India — open to remote and on-site Data Analyst roles.</p>
+  <div class="footer__links">
+    <a href="mailto:aradhanasinghda@gmail.com">aradhanasinghda@gmail.com</a>
+    <a href="https://www.linkedin.com/in/aradhana-singh-4358a0327/">LinkedIn</a>
+    <a href="https://github.com/aradhanasingh-da">GitHub</a>
+  </div>
+</footer>
+
+</body>
+</html>
