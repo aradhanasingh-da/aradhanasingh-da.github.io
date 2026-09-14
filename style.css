@@ -34,7 +34,7 @@ html {
   scroll-behavior: smooth;
 }
 
-/* ---------- Global Body & Network Background ---------- */
+/* ---------- Global Body & Cinematic Background ---------- */
 body {
   margin: 0;
   background-color: var(--bg-deep);
@@ -46,18 +46,55 @@ body {
   position: relative;
 }
 
-/* Injected Network Pattern Overlay */
+/* Layer 1: Infinite Panning Data Grid */
+html::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  animation: dataGridPan 15s linear infinite;
+  pointer-events: none;
+  z-index: -2;
+}
+
+@keyframes dataGridPan {
+  0% { background-position: 0px 0px; }
+  100% { background-position: -40px 40px; } 
+}
+
+/* Layer 2: Cinematic Scanner Sweep & Pulsing Orbs */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
   background-image: 
-    radial-gradient(circle at 80% 30%, rgba(66, 149, 155, 0.05) 0%, transparent 40%),
-    radial-gradient(circle at 20% 70%, rgba(208, 128, 85, 0.03) 0%, transparent 40%),
-    radial-gradient(circle at 50% 50%, rgba(255,255,255,0.02) 1px, transparent 1px);
-  background-size: 100% 100%, 100% 100%, 40px 40px;
+    /* The vertical scanning laser */
+    linear-gradient(180deg, transparent 0%, rgba(66, 149, 155, 0) 45%, rgba(66, 149, 155, 0.15) 50%, rgba(66, 149, 155, 0) 55%, transparent 100%),
+    /* Ambient glowing nodes */
+    radial-gradient(circle at 80% 30%, rgba(66, 149, 155, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 20% 70%, rgba(208, 128, 85, 0.05) 0%, transparent 40%);
+  background-size: 100% 200vh, 100% 100%, 100% 100%;
+  background-repeat: no-repeat;
+  animation: scannerSweep 8s linear infinite;
   pointer-events: none;
   z-index: -1;
+}
+
+@keyframes scannerSweep {
+  0% { 
+    background-position: 0 -200vh, 0 0, 0 0; 
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1; 
+  }
+  100% { 
+    background-position: 0 200vh, 0 0, 0 0; 
+    opacity: 0.6;
+  }
 }
 
 /* Injected Terminal System Status */
@@ -163,7 +200,6 @@ a:hover { color: var(--accent-teal); }
   margin: 0 0 var(--space-3);
   letter-spacing: -1px;
   max-width: 18ch;
-  /* Applies gradient coloring to the middle words */
   background: radial-gradient(ellipse at 65% 50%, var(--accent-rust) 0%, var(--accent-teal) 35%, #E5E7EB 50%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -463,4 +499,5 @@ a:hover { color: var(--accent-teal); }
   .hero__stats .stat { height: 120px; }
   .nav__links { gap: var(--space-2); font-size: 0.88rem; }
   body::after { display: none; }
-}
+  }
+  
