@@ -20,6 +20,7 @@
   --space-3: 1.5rem;
   --space-4: 2.5rem;
   --space-5: 4rem;
+  --space-6: 6rem;
 
   --measure: 72ch;
 
@@ -34,7 +35,7 @@ html {
   scroll-behavior: smooth;
 }
 
-/* ---------- Global Body & Cinematic Background ---------- */
+/* ---------- Global Body ---------- */
 body {
   margin: 0;
   background-color: var(--bg-deep);
@@ -71,9 +72,7 @@ body::before {
   position: fixed;
   inset: 0;
   background-image: 
-    /* The vertical scanning laser */
     linear-gradient(180deg, transparent 0%, rgba(66, 149, 155, 0) 45%, rgba(66, 149, 155, 0.15) 50%, rgba(66, 149, 155, 0) 55%, transparent 100%),
-    /* Ambient glowing nodes */
     radial-gradient(circle at 80% 30%, rgba(66, 149, 155, 0.08) 0%, transparent 40%),
     radial-gradient(circle at 20% 70%, rgba(208, 128, 85, 0.05) 0%, transparent 40%);
   background-size: 100% 200vh, 100% 100%, 100% 100%;
@@ -84,20 +83,35 @@ body::before {
 }
 
 @keyframes scannerSweep {
-  0% { 
-    background-position: 0 -200vh, 0 0, 0 0; 
-    opacity: 0.6;
-  }
-  50% {
-    opacity: 1; 
-  }
-  100% { 
-    background-position: 0 200vh, 0 0, 0 0; 
-    opacity: 0.6;
-  }
+  0% { background-position: 0 -200vh, 0 0, 0 0; opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { background-position: 0 200vh, 0 0, 0 0; opacity: 0.6; }
 }
 
-/* Injected Terminal System Status */
+/* Layer 3: Live Telemetry Data Feed (Bottom Left) */
+html::after {
+  content: "[ SYSTEM TELEMETRY ] \A > data_stream: ACTIVE \A > rows_processed: 1.48M \A > visitor_queries: 9,204 \A > model_drift: 0.02%";
+  white-space: pre;
+  position: fixed;
+  bottom: 12px;
+  left: 15px;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  line-height: 1.5;
+  color: var(--accent-teal);
+  pointer-events: none;
+  z-index: 100;
+  opacity: 0.8;
+  text-shadow: 0 0 5px var(--accent-teal-glow);
+  animation: terminalFlicker 8s infinite;
+}
+
+@keyframes terminalFlicker {
+  0%, 96%, 98%, 100% { opacity: 0.8; }
+  97%, 99% { opacity: 0.2; text-shadow: none; }
+}
+
+/* Injected Terminal System Status (Bottom Right) */
 body::after {
   content: "Page version: 1.2 | Analysis refresh: Real-time | Query Execution Time: 0.1s";
   position: fixed;
@@ -191,7 +205,7 @@ a:hover { color: var(--accent-teal); }
 
 @keyframes blink { 50% { opacity: 0; } }
 
-/* Headline CSS Magic: Gradient clip simulating highlighted words */
+/* Headline CSS Magic */
 .hero__headline {
   font-family: var(--font-serif);
   font-weight: 300;
@@ -314,7 +328,7 @@ a:hover { color: var(--accent-teal); }
 
 .btn:hover { opacity: 0.7; color: var(--accent-teal) !important; }
 
-/* Resume Icon Injection */
+/* Resume Icon */
 .btn:nth-child(1)::before {
   content: "";
   display: inline-block;
@@ -324,7 +338,7 @@ a:hover { color: var(--accent-teal); }
   -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'%3E%3Cpath d='M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3'/%3E%3C/svg%3E") center/contain no-repeat;
 }
 
-/* GitHub Icon Injection */
+/* GitHub Icon */
 .btn:nth-child(2)::before {
   content: "";
   display: inline-block;
@@ -334,7 +348,7 @@ a:hover { color: var(--accent-teal); }
   -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'%3E%3Cpath d='M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22'/%3E%3C/svg%3E") center/contain no-repeat;
 }
 
-/* LinkedIn Icon Injection */
+/* LinkedIn Icon */
 .btn:nth-child(3)::before {
   content: "";
   display: inline-block;
@@ -498,6 +512,6 @@ a:hover { color: var(--accent-teal); }
   .hero__stats { flex-direction: column; gap: var(--space-5); margin-top: 2rem; }
   .hero__stats .stat { height: 120px; }
   .nav__links { gap: var(--space-2); font-size: 0.88rem; }
-  body::after { display: none; }
-  }
+  html::after, body::after { display: none; }
+    }
   
